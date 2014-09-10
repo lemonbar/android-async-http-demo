@@ -77,6 +77,11 @@ public class HelloAndroidActivity extends Activity {
                         LoginResponse loginResponse = new Gson().fromJson(response.toString(), LoginResponse.class);
                         ((EditText) findViewById(R.id.editText)).setText(loginResponse.userinfo.getAvatar());
                     }
+
+                    @Override
+                    public void onFinish() {
+                        Toast.makeText(HelloAndroidActivity.this, "onFinish method is invoked!!", Toast.LENGTH_LONG).show();
+                    }
                 });
             }
         });
